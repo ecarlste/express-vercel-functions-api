@@ -1,5 +1,6 @@
 import { NextFunction, Request, Response } from "express";
 import { items } from "../models/item";
+import { STATUS_CODES } from "http";
 
 export const createItem = (req: Request, res: Response, next: NextFunction) => {
   try {
@@ -55,6 +56,23 @@ export const updateItem = (req: Request, res: Response, next: NextFunction) => {
 
     items[itemIndex].name = name;
     res.json(items[itemIndex]);
+  } catch (error) {
+    next(error);
+  }
+};
+
+export const deleteItem = (req: Request, res: Response, next: NextFunction) => {
+  try {
+    const id = parseInt(req.params.id);
+
+    const itemIndex = items.findIndex((i) => i.id === id);
+    if (itemIndex === -1) {
+      res.status(404).json({ message: "Item not found" });
+      return;
+    }
+
+    const deletedItem = items.splice(itemIndex, 1)[0];
+    res.json(deletedItem);
   } catch (error) {
     next(error);
   }
