@@ -41,3 +41,21 @@ export const getItemById = (
     next(error);
   }
 };
+
+export const updateItem = (req: Request, res: Response, next: NextFunction) => {
+  try {
+    const id = parseInt(req.params.id, 10);
+    const { name } = req.body;
+
+    const itemIndex = items.findIndex((i) => i.id === id);
+    if (itemIndex === -1) {
+      res.status(404).json({ message: "Item not found" });
+      return;
+    }
+
+    items[itemIndex].name = name;
+    res.json(items[itemIndex]);
+  } catch (error) {
+    next(error);
+  }
+};
