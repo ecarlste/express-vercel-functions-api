@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "tsx watch src/server.ts",
     "dev:generated": "nodemon --watch src --exec tsx src/server.ts",
-    "scaffold": "drizzle-express scaffold category -c name:text",
+    "scaffold": "drizzle-express scaffold",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
