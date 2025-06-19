@@ -21,3 +21,23 @@ export const getItems = (req: Request, res: Response, next: NextFunction) => {
     next(error);
   }
 };
+
+export const getItemById = (
+  req: Request,
+  res: Response,
+  next: NextFunction
+) => {
+  try {
+    const id = parseInt(req.params.id, 10);
+
+    const item = items.find((i) => i.id === id);
+    if (!item) {
+      res.status(404).json({ message: "Item not found" });
+      return;
+    }
+
+    res.json(item);
+  } catch (error) {
+    next(error);
+  }
+};
