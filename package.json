@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "tsx watch src/server.ts",
     "dev:generated": "nodemon --watch src --exec tsx src/server.ts",
+    "scaffold": "drizzle-express scaffold category -c name:text",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -25,6 +26,7 @@
     "@types/body-parser": "^1.19.6",
     "@types/express": "^5.0.3",
     "@types/node": "^24.0.3",
+    "drizzle-express": "^0.0.5",
     "drizzle-kit": "^0.31.1",
     "eslint": "^9.29.0",
     "nodemon": "^3.1.10",
