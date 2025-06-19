@@ -1,12 +1,15 @@
+import { Request, Response } from "express";
 import express from "express";
-import itemRoutes from "./routes/itemRoutes";
-import { errorHandler } from "./middlewares/errorHandler";
+import bodyParser from "body-parser";
+import { errorHandler } from "@/middlewares/error-handler.middleware";
 
 const app = express();
 
-app.use(express.json());
+app.use(bodyParser.json());
 
-app.use("/api/items", itemRoutes);
+app.get("/", (req: Request, res: Response) => {
+  res.send("Hello World!");
+});
 
 app.use(errorHandler);
 
