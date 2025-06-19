@@ -8,6 +8,7 @@
     "scaffold": "drizzle-express scaffold",
     "db:gen": "drizzle-kit generate",
     "db:mig": "drizzle-kit migrate",
+    "db:st": "drizzle-kit studio",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
