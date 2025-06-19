@@ -8,6 +8,13 @@
       "when": 1750355782403,
       "tag": "0000_illegal_ink",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "6",
+      "when": 1750368062750,
+      "tag": "0001_cool_nemesis",
+      "breakpoints": true
     }
   ]
 }
