@@ -1,6 +1,5 @@
 import { NextFunction, Request, Response } from "express";
 import { items } from "../models/item";
-import { STATUS_CODES } from "http";
 
 export const createItem = (req: Request, res: Response, next: NextFunction) => {
   try {
