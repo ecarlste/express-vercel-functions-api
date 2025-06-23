@@ -1,0 +1,65 @@
+###################
+# Category Requests
+###################
+
+### Create Category
+POST http://localhost:3000/categories
+Content-Type: application/json
+
+{
+  "name": "category to delete" 
+}
+
+### Get All Categories
+GET http://localhost:3000/categories
+
+### Get Cateogory by Id
+GET http://localhost:3000/categories/v1t8y8qoc64068dvqxmdqxzm
+
+### Update Category by Id
+PUT http://localhost:3000/categories/v1t8y8qoc64068dvqxmdqxzm
+Content-Type: application/json
+
+{
+  "name": "Updated the name using VSCode Rest Client"
+}
+
+### Delete Category by Id
+DELETE http://localhost:3000/categories/q64hnv1z2t8e5uxbxoqfupqn
+
+###############
+# Post Requests
+###############
+
+### Create Post
+POST http://localhost:3000/posts
+Content-Type: application/json
+
+{
+  "title": "Past post before first!",
+  "categoryId": "v1t8y8qoc64068dvqxmdqxzm",
+  "content": "Here is the post's content...",
+  "isDraft": 1,
+  "publishedAt": 1750701081000
+}
+
+### Get All Posts
+GET http://localhost:3000/posts
+
+### Get Post By Id
+GET http://localhost:3000/posts/dz2soepouretbszm1i1xfsst
+
+### Update Post by Id
+PUT http://localhost:3000/posts/bp2q8mier15fp5xyl3ivnjzu
+Content-Type: application/json
+
+{
+  "title": "Post post before first(updated)!",
+  "categoryId": "v1t8y8qoc64068dvqxmdqxzm",
+  "content": "Here is the post's updated content...",
+  "isDraft": 1,
+  "publishedAt": 1750701081000
+}
+
+### Delete Post by Id
+DELETE http://localhost:3000/posts/azrt7ljcepta9vhndxrd5f8r
